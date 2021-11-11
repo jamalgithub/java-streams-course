@@ -1,5 +1,6 @@
 package lectures;
 
+import static org.assertj.core.api.Assertions.*;
 import beans.Person;
 import java.util.List;
 import java.util.stream.IntStream;
@@ -16,7 +17,7 @@ public class Lecture2 {
     IntStream.rangeClosed(0, 10).forEach(System.out::println);
   }
 
-  @Test
+  @Test(expected = ArrayIndexOutOfBoundsException.class)
   public void rangeIteratingLists() throws Exception {
     List<Person> people = MockData.getPeople();
     System.out.println("exclusive");
@@ -32,5 +33,6 @@ public class Lecture2 {
         .filter(number -> number % 2 == 0)
         .limit(20)
         .forEach(System.out::println);
+    assertThat(true).isTrue();
   }
 }
