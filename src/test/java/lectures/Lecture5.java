@@ -8,7 +8,6 @@ import beans.Person;
 import beans.PersonDTO;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
-import java.util.OptionalDouble;
 import java.util.stream.Collectors;
 import mockdata.MockData;
 import org.junit.Test;
@@ -44,7 +43,9 @@ public class Lecture5 {
 
   @Test
   public void test() throws Exception {
-
+    ImmutableList<Car> cars = MockData.getCars();
+    cars.forEach(System.out::println);
+    assertThat(cars.size()).isEqualTo(1000);
   }
 }
 
