@@ -71,6 +71,7 @@ public class Lecture7 {
     System.out.println(statistics.getMax());
     System.out.println(statistics.getMin());
     System.out.println(statistics.getSum());
+    assertThat(statistics.getCount()).isEqualTo(1000L);
   }
 
 }
