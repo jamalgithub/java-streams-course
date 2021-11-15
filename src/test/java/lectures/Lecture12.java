@@ -1,5 +1,7 @@
 package lectures;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import beans.Person;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,8 +15,10 @@ public class Lecture12 {
     List<String> emails = MockData.getPeople()
         .stream()
         .map(Person::getEmail)
-        .collect(Collectors.toList());
+        .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
+        //.collect(Collectors.toList());
 
     emails.forEach(System.out::println);
+    assertThat(emails.size()).isEqualTo(1000);
   }
 }
